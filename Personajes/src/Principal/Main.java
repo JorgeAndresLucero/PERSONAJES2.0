@@ -8,6 +8,7 @@ import Factory.*;
 import AbstractFactory.*;
 import Builder.*;
 import Prototype.*;
+import Prototype.Orco;
 
 public class Main {
 
@@ -71,9 +72,33 @@ public class Main {
 	                    System.out.println(ar.getEscudo());
 	                    
 	                    //prototype
-	                    
-	                 
-	                
+	                   Orco o = new Orco();
+	                   Personajes personaje;
+	                   o.setNombre("Mi Orco");
+	                   o.setArma("Mazo");
+	                   o.setEscudo("Escudo de Orcos");
+	                   
+	                   System.out.println("El personaje original es:");
+	                   System.out.println(o.getNombre());
+	                   System.out.println(o.getArma());
+	                   System.out.println(o.getEscudo());
+	                   personaje = o.clonar();
+	                   
+	                   personaje.setNombre(personaje.getNombre()+" clonado");
+	                   personaje.setNombre("Mi orco clon");
+	                   personaje.setArma(personaje.getArma());
+	                   personaje.setArma("Espada");
+	                   personaje.setEscudo(personaje.getEscudo());
+	                   personaje.setEscudo("Escudo de Oro");
+	                   
+	                   System.out.println("EL CLON: "+personaje.getNombre());
+	                   System.out.println("Nueva arma: "+personaje.getArma());
+	                   System.out.println("Nuevo esudo"+personaje.getEscudo());
+	                   
+	                   System.out.println("El personaje original es:");
+	                   System.out.println("Nombre: "+o.getNombre());
+	                   System.out.println("Arma: "+o.getArma());
+	                   System.out.println("Escudo: "+o.getEscudo());
 	                    
 	                     break;
 	                
